@@ -5,3 +5,8 @@
 .detail img{
 	width: 100%;
 }
+
+.actions {
+  margin-top: 1rem;
+  text-align: center;
+}

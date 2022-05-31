@@ -6,8 +6,11 @@
   width: 25%;
   height: 100%;
   overflow: hidden;
+	display: flex;
+  justify-content: left;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
+	layout: "fill";
 }
 
 .image img {
@@ -16,6 +19,7 @@
 }
 
 .content {
+	width: 50%;
   text-align: center;
   padding: 1rem;
 }

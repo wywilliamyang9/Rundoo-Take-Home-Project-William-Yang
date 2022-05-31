@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+import Head from 'next/head'
 import NewSupplierForm from '../../components/suppliers/NewSupplierForm'
 
 function CreateSupplierPage() {
@@ -15,7 +17,15 @@ function CreateSupplierPage() {
 		console.log(data);
 	}
 
-	return <NewSupplierForm onAddSupplier={addSupplierHandler} />
+	return (
+		<Fragment>
+			<Head>
+				<title>Add a Supplier</title>
+				<meta name='description' content='Form for adding suppliers' />
+			</Head>
+			<NewSupplierForm onAddSupplier={addSupplierHandler} />
+		</Fragment>
+	);
 }
 
 export default CreateSupplierPage

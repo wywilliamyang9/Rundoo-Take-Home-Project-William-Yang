@@ -1,10 +1,12 @@
 import { useRef } from 'react';
-
+import { useRouter } from 'next/router';
 import Card from '../ui/Card';
 import classes from './NewSupplierForm.module.css';
 
 function NewSupplierForm(props) {
-  const nameInputRef = useRef();
+  const router = useRouter();
+	
+	const nameInputRef = useRef();
   const logoInputRef = useRef();
   const addressInputRef = useRef();
 
@@ -22,6 +24,8 @@ function NewSupplierForm(props) {
     };
 
     props.onAddSupplier(supplierData);
+
+		router.push('/');
   }
 
   return (
@@ -32,7 +36,7 @@ function NewSupplierForm(props) {
           <input type='text' required id='name' ref={nameInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor='logo'>Supplier Logo</label>
+          <label htmlFor='logo'>Supplier Logo Link</label>
           <input type='url' required id='logo' ref={logoInputRef} />
         </div>
         <div className={classes.control}>
@@ -40,7 +44,7 @@ function NewSupplierForm(props) {
           <input type='text' required id='address' ref={addressInputRef} />
         </div>
         <div className={classes.actions}>
-          <button>Add Meetup</button>
+          <button>Add Supplier</button>
         </div>
       </form>
     </Card>

@@ -1,4 +1,5 @@
-// import { useEffect, useState } from 'react';
+import { Fragment } from 'react';
+import Head from 'next/head'
 import SupplierList from '../components/suppliers/SupplierList';
 
 // const DUMMY_SUPPLIERS = [
@@ -20,27 +21,17 @@ import SupplierList from '../components/suppliers/SupplierList';
 // ];
 
 function HomePage(props) {
-	// const [loadedSuppliers, setLoadedSuppliers] = useState([]);
 	
-	// useEffect(() => {
-	// 	// send a http request and fetch data
-	// 	setLoadedSuppliers(DUMMY_SUPPLIERS);
-		
-	// }, []);
-	
-	return <SupplierList suppliers={props.suppliers} /> ;
+	return (
+		<Fragment>
+			<Head>
+				<title>Suppliers</title>
+				<meta name='description' content='William Yang | Rundoo Take Home' />
+			</Head>
+			<SupplierList suppliers={props.suppliers} />
+		</Fragment>
+	);
 }
-
-// export async function getServerSideProps(context) {
-// 	const req = context.req
-// 	const res = context.res
-	
-// 	return{
-// 		props: {
-// 			suppliers: DUMMY_SUPPLIERS
-// 		}
-// 	};
-// }
 
 export async function getStaticProps() {
 	// fetch data from an API

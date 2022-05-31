@@ -1,12 +1,21 @@
+import { Fragment } from 'react';
+import Head from 'next/head'
 import SupplierData from "../../components/suppliers/SupplierDetail"
 
 function SupplierDetails(props){
+
 	return (
-		<SupplierData 
-			name={props.supplierData.name}
-			logo={props.supplierData.logo}
-			address={props.supplierData.address}
-		/>
+		<Fragment>
+			<Head>
+				<title>{props.supplierData.name}</title>
+				<meta name='description' content={props.supplierData.name} />
+			</Head>
+			<SupplierData 
+				name={props.supplierData.name}
+				logo={props.supplierData.logo}
+				address={props.supplierData.address}
+			/>
+		</Fragment>
 	);
 }
 
